@@ -1,7 +1,5 @@
 package space.grosu.firstapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,14 +15,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
-public class Level1 extends AppCompatActivity {
+public class Level2 extends AppCompatActivity {
 
     Dialog dialog;
-    Dialog dialogEnd;
 
     public int numLeft; //Переменная для левой картинки + текст
     public int numRight; //Переменная для правой картинки + текст
@@ -77,7 +74,7 @@ public class Level1 extends AppCompatActivity {
                 //обрабатываем нажатие кнопки - начало
                 try {
                     //вернуться назад к выбору уровня - начало
-                    Intent intent = new Intent(Level1.this, GameLevels.class); //Создал намерение для перехода
+                    Intent intent = new Intent(Level2.this, GameLevels.class); //Создал намерение для перехода
                     startActivity(intent); //старт намерения
                     finish(); //закрыть этот класс
                     //вернуться назад к выбору уровня - конец
@@ -106,59 +103,6 @@ public class Level1 extends AppCompatActivity {
 
         dialog.show(); //показать диалоговое окно
 
-        //--------------------------------------------------------------------------------------
-        //Вызов диалогового окна в конце игры
-        dialogEnd = new Dialog(this); //создаем новое диалоговое окно
-        dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE); //скрываем заголовок
-        dialogEnd.setContentView(R.layout.dialogend); //путь к макету диалогового окна
-        dialogEnd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT)); //прозрачный фон диалогового окна
-        dialogEnd.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.MATCH_PARENT);
-        dialogEnd.setCancelable(false); //окно нельзя закрыть кнопкой назад
-
-        //кнопка которая закрывает диалоговое окно - начало
-        TextView btnclose2 = (TextView) dialogEnd.findViewById(R.id.btnclose);
-        btnclose2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //обрабатываем нажатие кнопки - начало
-                try {
-                    //вернуться назад к выбору уровня - начало
-                    Intent intent = new Intent(Level1.this, GameLevels.class); //Создал намерение для перехода
-                    startActivity(intent); //старт намерения
-                    finish(); //закрыть этот класс
-                    //вернуться назад к выбору уровня - конец
-
-
-                } catch (Exception e) {
-                    //Здесь кода не будет
-                }
-                dialogEnd.dismiss(); //закрываем диалоговое окно
-                //обрабатываем нажатие кнопки - конец
-
-            }
-        });
-        //кнопка которая закрывает диалоговое окно - конец
-
-        //кнопка "продолжить" -начало
-        Button btncontinue2 = (Button) dialogEnd.findViewById(R.id.btncontinue);
-        btncontinue2.setOnClickListener(view -> {
-
-            try {
-                Intent intent = new Intent(Level1.this, Level2.class);
-                startActivity(intent);
-                finish();
-            } catch (Exception e) {
-
-            }
-
-
-            dialogEnd.dismiss(); //диалоговое окно закрывается
-        });
-        //кнопка "продолжить" -конец
-
-
-        //--------------------------------------------------------------------------------------
         //Кнопка "назад" - начало
         Button btn_back = (Button) findViewById(R.id.button_back);
         btn_back.setOnClickListener(new View.OnClickListener() {
@@ -167,7 +111,7 @@ public class Level1 extends AppCompatActivity {
                 //Обрабатываем нажатие кнопки назад - начало
                 try {
                     //вернуться назад к выбору уровня - начало
-                    Intent intent = new Intent(Level1.this, GameLevels.class); //создал намерение для перехода
+                    Intent intent = new Intent(Level2.this, GameLevels.class); //создал намерение для перехода
                     startActivity(intent); //старт намеревания
                     finish(); //закрыть этот класс
                     //вернуться назад к выбору уровня - конец
@@ -183,15 +127,15 @@ public class Level1 extends AppCompatActivity {
 
         //Массив для прогресса игры - начало
         final int[] progress = {
-                R.id.point1, R.id.point2, R.id.point3, R.id.point4, R.id.point5,
-                R.id.point6, R.id.point7, R.id.point8, R.id.point9, R.id.point10,
-                R.id.point11, R.id.point12, R.id.point13, R.id.point14, R.id.point15,
-                R.id.point16, R.id.point17, R.id.point18, R.id.point19, R.id.point20,
+                R.id.point1,R.id.point2,R.id.point3,R.id.point4,R.id.point5,
+                R.id.point6,R.id.point7,R.id.point8,R.id.point9,R.id.point10,
+                R.id.point11,R.id.point12,R.id.point13,R.id.point14,R.id.point15,
+                R.id.point16,R.id.point17,R.id.point18,R.id.point19,R.id.point20,
         };
         //Массив для прогресса игры - конец
 
         //Подключаем анимацию - начало
-        final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
         //Подключаем анимацию - конец
 
         numLeft = random.nextInt(10); //Генерируем случайное число от 0 до 9
@@ -225,7 +169,7 @@ public class Level1 extends AppCompatActivity {
                     //Если коснулся картинки - конец
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     //Если отпустил палец - начало
-                    if (numLeft > numRight) {
+                    if (numLeft>numRight) {
                         //Если левая картинка больше
                         if (count < 20) {
                             count = count + 1;
@@ -244,13 +188,13 @@ public class Level1 extends AppCompatActivity {
                             tv.setBackgroundResource(R.drawable.style_points_green);
                         }
                         //Определяем правильные ответы и закрашиваем зеленым - конец
-                    } else {
+                    }else {
                         //Если левая картинка меньше
-                        if (count > 0) {
-                            if (count == 1) {
-                                count = 0;
-                            } else {
-                                count = count - 2;
+                        if (count>0) {
+                            if (count==1) {
+                                count=0;
+                            }else {
+                                count = count-2;
                             }
                         }
                         //Закрашиваем прогресс серым цветом - начало
@@ -268,10 +212,9 @@ public class Level1 extends AppCompatActivity {
                         //Определяем правильные ответы и закрашиваем зеленым - конец
                     }
                     //Если отпустил палец - конец
-                    if (count == 20) {
+                    if (count==20) {
                         //ВЫХОД ИЗ УРОВНЯ
-                        dialogEnd.show(); //показать диалоговое окно
-                    } else {
+                    }else {
                         numLeft = random.nextInt(10); //Генерируем случайное число от 0 до 9
                         img_left.setImageResource(array.images1[numLeft]); //достаем из маасива картинку
                         img_left.startAnimation(a);
@@ -314,7 +257,7 @@ public class Level1 extends AppCompatActivity {
                     //Если коснулся картинки - конец
                 } else if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
                     //Если отпустил палец - начало
-                    if (numLeft < numRight) {
+                    if (numLeft<numRight) {
                         //Если правая картинка больше
                         if (count < 20) {
                             count = count + 1;
@@ -333,13 +276,13 @@ public class Level1 extends AppCompatActivity {
                             tv.setBackgroundResource(R.drawable.style_points_green);
                         }
                         //Определяем правильные ответы и закрашиваем зеленым - конец
-                    } else {
+                    }else {
                         //Если правая картинка меньше
-                        if (count > 0) {
-                            if (count == 1) {
-                                count = 0;
-                            } else {
-                                count = count - 2;
+                        if (count>0) {
+                            if (count==1) {
+                                count=0;
+                            }else {
+                                count = count-2;
                             }
                         }
                         //Закрашиваем прогресс серым цветом - начало
@@ -357,10 +300,9 @@ public class Level1 extends AppCompatActivity {
                         //Определяем правильные ответы и закрашиваем зеленым - конец
                     }
                     //Если отпустил палец - конец
-                    if (count == 20) {
+                    if (count==20) {
                         //ВЫХОД ИЗ УРОВНЯ
-                        dialogEnd.show(); //показать диалоговое окно
-                    } else {
+                    }else {
                         numLeft = random.nextInt(10); //Генерируем случайное число от 0 до 9
                         img_left.setImageResource(array.images1[numLeft]); //достаем из маасива картинку
                         img_left.startAnimation(a);
@@ -395,7 +337,7 @@ public class Level1 extends AppCompatActivity {
 //Обрабатываем нажатие кнопки назад - начало
         try {
             //вернуться назад к выбору уровня - начало
-            Intent intent = new Intent(Level1.this, GameLevels.class); //создал намерение для перехода
+            Intent intent = new Intent(Level2.this, GameLevels.class); //создал намерение для перехода
             startActivity(intent); //старт намеревания
             finish(); //закрыть этот класс
             //вернуться назад к выбору уровня - конец
