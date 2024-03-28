@@ -25,7 +25,7 @@ public class Level2 extends AppCompatActivity {
 
     public int numLeft; //Переменная для левой картинки + текст
     public int numRight; //Переменная для правой картинки + текст
-    Array array = new Array(); // Создали новый объект из класса Array
+    ArrayRome arrayRome = new ArrayRome(); // Создали новый объект из класса Array
     Random random = new Random(); //Для генерации случайных чисел
     public int count = 0; // Счетчик правильных ответов
 
@@ -139,8 +139,8 @@ public class Level2 extends AppCompatActivity {
         //Подключаем анимацию - конец
 
         numLeft = random.nextInt(10); //Генерируем случайное число от 0 до 9
-        img_left.setImageResource(array.images1[numLeft]); //достаем из маасива картинку
-        text_left.setText(array.texts1[numLeft]); // Достаем из массива текст
+        img_left.setImageResource(arrayRome.imagesRome[numLeft]); //достаем из маасива картинку
+        text_left.setText(arrayRome.textsRome[numLeft]); // Достаем из массива текст
 
         numRight = random.nextInt(10); //Генерируем случайное число от 0 до 9
 
@@ -150,8 +150,8 @@ public class Level2 extends AppCompatActivity {
         }
         //Цикл с предусловием, проверяющий равенсто чисел - конец
 
-        img_right.setImageResource(array.images1[numRight]); // Достаем из массива картинку
-        text_right.setText(array.texts1[numRight]); // Достаем из массива текст
+        img_right.setImageResource(arrayRome.imagesRome[numRight]); // Достаем из массива картинку
+        text_right.setText(arrayRome.textsRome[numRight]); // Достаем из массива текст
 
         // Обрабатываем нажатие на левую картинку - начало
         img_left.setOnTouchListener(new View.OnTouchListener() {
@@ -216,9 +216,9 @@ public class Level2 extends AppCompatActivity {
                         //ВЫХОД ИЗ УРОВНЯ
                     }else {
                         numLeft = random.nextInt(10); //Генерируем случайное число от 0 до 9
-                        img_left.setImageResource(array.images1[numLeft]); //достаем из маасива картинку
+                        img_left.setImageResource(arrayRome.imagesRome[numLeft]); //достаем из маасива картинку
                         img_left.startAnimation(a);
-                        text_left.setText(array.texts1[numLeft]); // Достаем из массива текст
+                        text_left.setText(arrayRome.textsRome[numLeft]); // Достаем из массива текст
 
                         numRight = random.nextInt(10); //Генерируем случайное число от 0 до 9
 
@@ -228,9 +228,9 @@ public class Level2 extends AppCompatActivity {
                         }
                         //Цикл с предусловием, проверяющий равенсто чисел - конец
 
-                        img_right.setImageResource(array.images1[numRight]); // Достаем из массива картинку
+                        img_right.setImageResource(arrayRome.imagesRome[numRight]); // Достаем из массива картинку
                         img_right.startAnimation(a);
-                        text_right.setText(array.texts1[numRight]); // Достаем из массива текст
+                        text_right.setText(arrayRome.textsRome[numRight]); // Достаем из массива текст
 
                         img_right.setEnabled(true); // Включаем обратно правую картинку
                     }
@@ -304,9 +304,9 @@ public class Level2 extends AppCompatActivity {
                         //ВЫХОД ИЗ УРОВНЯ
                     }else {
                         numLeft = random.nextInt(10); //Генерируем случайное число от 0 до 9
-                        img_left.setImageResource(array.images1[numLeft]); //достаем из маасива картинку
+                        img_left.setImageResource(arrayRome.imagesRome[numLeft]); //достаем из маасива картинку
                         img_left.startAnimation(a);
-                        text_left.setText(array.texts1[numLeft]); // Достаем из массива текст
+                        text_left.setText(arrayRome.textsRome[numLeft]); // Достаем из массива текст
 
                         numRight = random.nextInt(10); //Генерируем случайное число от 0 до 9
 
@@ -316,9 +316,9 @@ public class Level2 extends AppCompatActivity {
                         }
                         //Цикл с предусловием, проверяющий равенсто чисел - конец
 
-                        img_right.setImageResource(array.images1[numRight]); // Достаем из массива картинку
+                        img_right.setImageResource(arrayRome.imagesRome[numRight]); // Достаем из массива картинку
                         img_right.startAnimation(a);
-                        text_right.setText(array.texts1[numRight]); // Достаем из массива текст
+                        text_right.setText(arrayRome.textsRome[numRight]); // Достаем из массива текст
 
                         img_left.setEnabled(true); // Включаем обратно левую картинку
                     }

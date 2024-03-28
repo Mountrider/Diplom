@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="lvl1text0">Ноль</string>
-    <string name="lvl1text1">Один</string>
-    <string name="lvl1text2">Два</string>
-    <string name="lvl1text3">Три</string>
-    <string name="lvl1text4">Четыре</string>
-    <string name="lvl1text5">Пять</string>
-    <string name="lvl1text6">Шесть</string>
-    <string name="lvl1text7">Семь</string>
-    <string name="lvl1text8">Восемь</string>
-    <string name="lvl1text9">Девять</string>
+    <string name="rome_text_0">Памятник Цезарю</string>
+    <string name="rome_text_1">Триумфальная арка Константина</string>
+    <string name="rome_text_2">Дворец Флавиев</string>
+    <string name="rome_text_3">Пантеон</string>
+    <string name="rome_text_4">Храм Венеры и Ромы</string>
+    <string name="rome_text_5">Храм Сатурна</string>
+    <string name="rome_text_6">Храм Геркулеса</string>
+    <string name="rome_text_7">Алтарь Мира</string>
+    <string name="rome_text_8">Фонтан Треви</string>
+    <string name="rome_text_9">Колизей</string>
+
+    <string name="wrong_text_0">Храм Святого Сердца</string>
+    <string name="wrong_text_1">Лувр</string>
+    <string name="wrong_text_2">Собор Парижской Богоматери</string>
+    <string name="wrong_text_3">Виндзорский замок</string>
+    <string name="wrong_text_4">Храм Артемиды</string>
+    <string name="wrong_text_5">Колизей</string>
+    <string name="wrong_text_6">Великая стена</string>
+    <string name="wrong_text_7">Пирамиды Майя</string>
+    <string name="wrong_text_8">Пирамида Хеопса</string>
+    <string name="wrong_text_9">Стоунхендж</string>
+
+
+
 </resources>
