@@ -14,6 +14,7 @@
         android:orientation="vertical"
         android:padding="20dp"
         android:gravity="center">
+
         <TextView
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -23,7 +24,14 @@
             android:gravity="center"
             android:background="@drawable/button_stroke_black95_press_white"
             android:layout_gravity="end"></TextView>
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:id="@+id/previewimg"
+            android:src="@drawable/previewimgend"
+            android:layout_weight="100"
+            android:layout_marginTop="10dp">
+        </ImageView>
         <ScrollView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -43,13 +51,13 @@
             android:layout_height="0dp"
             android:id="@+id/btncontinue"
             android:background="@drawable/button_stroke_black95_press_white"
-            android:layout_weight="10"
+            android:layout_weight="16"
             android:text="@string/textcontinue"
             android:textColor="@color/black95"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textAllCaps="true"
-            android:textSize="24sp"
+            android:textSize="28sp"
             android:layout_marginTop="10dp"
             >
 

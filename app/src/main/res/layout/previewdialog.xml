@@ -24,11 +24,11 @@
             android:background="@drawable/button_stroke_black95_press_white"
             android:layout_gravity="start"></TextView>
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:id="@+id/previewimg"
             android:src="@drawable/previewimgone"
-            android:layout_weight="60"
+            android:layout_weight="50"
             android:layout_marginTop="10dp">
         </ImageView>
         <TextView
@@ -38,7 +38,7 @@
             android:text="@string/levelone"
             android:layout_weight="30"
             android:textColor="@color/black95"
-            android:textSize="30sp"
+            android:textSize="28sp"
             android:layout_marginTop="10dp">
         </TextView>
         <Button
@@ -46,13 +46,13 @@
             android:layout_height="0dp"
             android:id="@+id/btncontinue"
             android:background="@drawable/button_stroke_black95_press_white"
-            android:layout_weight="10"
+            android:layout_weight="6"
             android:text="@string/textcontinue"
             android:textColor="@color/black95"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:textAllCaps="true"
-            android:textSize="24sp"
+            android:textSize="21sp"
             android:layout_marginTop="10dp"
             >
 
